@@ -77,7 +77,7 @@ OregonH.Event.generateEvent = function () {
 
 OregonH.Event.stateChangeEvent = function (eventData) {
     //can't have negative quantities
-    if (eventData.value + this.caravan[eventData.stat] & gt;= 0) {
+    if (eventData.value + this.caravan[eventData.stat] >= 0) {
         this.caravan[eventData.stat] += eventData.value;
         this.ui.notify(eventData.text + Math.abs(eventData.value), eventData.notification);
     }
