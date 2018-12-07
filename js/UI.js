@@ -168,5 +168,3 @@ OregonH.UI.buyProduct = function (product) {
     OregonH.UI.refreshStats();
 };
 
-
-// TODO: const, let, var >>> check; re-write template strings like in line 37
