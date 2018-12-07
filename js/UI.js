@@ -55,7 +55,7 @@ OregonH.UI.fight = function () {
     const firepower = this.firepower;
     const gold = this.gold;
 
-    var damage = Math.ceil(Math.max(0, firepower * 2 * Math.random() - this.caravan.firepower));
+    let damage = Math.ceil(Math.max(0, firepower * 2 * Math.random() - this.caravan.firepower));
 
     //check there are survivors
     if (damage < this.caravan.crew) {
@@ -77,9 +77,9 @@ OregonH.UI.fight = function () {
 //runing away from enemy
 OregonH.UI.runaway = function () {
 
-    var firepower = this.firepower;
+    const firepower = this.firepower;
 
-    var damage = Math.ceil(Math.max(0, firepower * Math.random() / 2));
+    let damage = Math.ceil(Math.max(0, firepower * Math.random() / 2));
 
     //check there are survivors
     if (damage < this.caravan.crew) {
@@ -104,7 +104,7 @@ OregonH.UI.runaway = function () {
 OregonH.UI.showShop = function (products) {
 
     //get shop area
-    var shopDiv = document.getElementById('shop');
+    const shopDiv = document.getElementById('shop');
     shopDiv.classList.remove('hidden');
 
     //init the shop just once
@@ -113,7 +113,7 @@ OregonH.UI.showShop = function (products) {
         //event delegation
         shopDiv.addEventListener('click', function (e) {
             //what was clicked
-            var target = e.target || e.src;
+            const target = e.target || e.src;
 
             //exit button
             if (target.tagName == 'BUTTON') {
@@ -136,7 +136,7 @@ OregonH.UI.showShop = function (products) {
     }
 
     //clear existing content
-    var prodsDiv = document.getElementById('prods');
+    const prodsDiv = document.getElementById('prods');
     prodsDiv.innerHTML = '';
 
     //show products

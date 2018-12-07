@@ -111,8 +111,8 @@ OregonH.Event.eventTypes = [
 
 OregonH.Event.generateEvent = function () {
     //pick random one
-    var eventIndex = Math.floor(Math.random() * this.eventTypes.length);
-    var eventData = this.eventTypes[eventIndex];
+    let eventIndex = Math.floor(Math.random() * this.eventTypes.length);
+    let eventData = this.eventTypes[eventIndex];
 
     //events that consist in updating a stat
     if (eventData.type == 'STAT-CHANGE') {
@@ -154,11 +154,11 @@ OregonH.Event.stateChangeEvent = function (eventData) {
 
 OregonH.Event.shopEvent = function (eventData) {
     //number of products for sale
-    var numProds = Math.ceil(Math.random() * 4);
+    let numProds = Math.ceil(Math.random() * 4);
 
     //product list
-    var products = [];
-    var j, priceFactor;
+    let products = [];
+    let j, priceFactor;
 
     for (var i = 0; i < numProds; i++) {
         //random product
@@ -179,8 +179,8 @@ OregonH.Event.shopEvent = function (eventData) {
 
 //prepare an attack event
 OregonH.Event.attackEvent = function (eventData) {
-    var firepower = Math.round((0.7 + 0.6 * Math.random()) * OregonH.ENEMY_FIREPOWER_AVG);
-    var gold = Math.round((0.7 + 0.6 * Math.random()) * OregonH.ENEMY_GOLD_AVG);
+    let firepower = Math.round((0.7 + 0.6 * Math.random()) * OregonH.ENEMY_FIREPOWER_AVG);
+    let gold = Math.round((0.7 + 0.6 * Math.random()) * OregonH.ENEMY_GOLD_AVG);
 
     this.ui.showAttack(firepower, gold);
 };
