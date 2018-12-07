@@ -44,7 +44,7 @@ OregonH.Caravan.updateWeight = function () {
     }
 
     if (droppedFood) {
-        this.ui.notify('Left ' + droppedFood + ' food provisions behind', 'negative');
+        this.ui.notify(`Left ${droppedFood} food provisions behind`, 'negative');
     }
 };
 

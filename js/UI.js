@@ -61,8 +61,8 @@ OregonH.UI.fight = function () {
     if (damage < this.caravan.crew) {
         this.caravan.crew -= damage;
         this.caravan.money += gold;
-        this.notify(damage + ' people were killed fighting', 'negative');
-        this.notify('Found $' + gold, 'gold');
+        this.notify(`${damage} people were killed fighting`, 'negative');
+        this.notify(`Found $ ${gold}`, 'gold');
     }
     else {
         this.caravan.crew = 0;
@@ -84,7 +84,7 @@ OregonH.UI.runaway = function () {
     //check there are survivors
     if (damage < this.caravan.crew) {
         this.caravan.crew -= damage;
-        this.notify(damage + ' people were killed running', 'negative');
+        this.notify(`${damage} people were killed fighting`, 'negative');
     }
     else {
         this.caravan.crew = 0;
@@ -143,7 +143,7 @@ OregonH.UI.showShop = function (products) {
     var product;
     for (var i = 0; i < products.length; i++) {
         product = products[i];
-        prodsDiv.innerHTML += '<div class="product" data-qty="' + product.qty + '" data-item="' + product.item + '" data-price="' + product.price + '">' + product.qty + ' ' + product.item + ' - $' + product.price + '</div>';
+        prodsDiv.innerHTML += `<div class="product" data-qty="${product.qty}" data-item="${product.item}" data-price="${product.price}"> ${product.qty} ${product.item} - $${product.price}</div>`;
     }
 };
 
@@ -159,7 +159,7 @@ OregonH.UI.buyProduct = function (product) {
 
     OregonH.UI.caravan[product.item] += +product.qty;
 
-    OregonH.UI.notify('Bought ' + product.qty + ' x ' + product.item, 'positive');
+    OregonH.UI.notify(`Bought ${product.qty} x ${product.item}`, 'positive');
 
     //update weight
     OregonH.UI.caravan.updateWeight();
