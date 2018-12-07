@@ -26,7 +26,7 @@ OregonH.UI.refreshStats = function () {
 
 //show attack
 OregonH.UI.showAttack = function (firepower, gold) {
-    var attackDiv = document.getElementById('attack');
+    const attackDiv = document.getElementById('attack');
     attackDiv.classList.remove('hidden');
 
     //keep properties
@@ -34,7 +34,7 @@ OregonH.UI.showAttack = function (firepower, gold) {
     this.gold = gold;
 
     //show firepower
-    document.getElementById('attack-description').innerHTML = 'Firepower: ' + firepower;
+    document.getElementById('attack-description').innerHTML = `Firepower: ${firepower}`;
 
     //init once
     if (!this.attackInitiated) {
@@ -52,8 +52,8 @@ OregonH.UI.showAttack = function (firepower, gold) {
 //fight
 OregonH.UI.fight = function () {
 
-    var firepower = this.firepower;
-    var gold = this.gold;
+    const firepower = this.firepower;
+    const gold = this.gold;
 
     var damage = Math.ceil(Math.max(0, firepower * 2 * Math.random() - this.caravan.firepower));
 
@@ -167,3 +167,6 @@ OregonH.UI.buyProduct = function (product) {
     //update visuals
     OregonH.UI.refreshStats();
 };
+
+
+// TODO: const, let, var >>> check; re-write template strings like in line 37
