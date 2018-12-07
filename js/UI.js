@@ -92,7 +92,7 @@ OregonH.UI.runaway = function () {
     }
 
     //remove event listener
-    document.getElementById('runaway').removeEventListener('click');
+    document.getElementById('runaway').removeEventListener('click', this.runaway);
 
     //resume journey
     document.getElementById('attack').classList.add('hidden');
